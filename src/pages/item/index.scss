@@ -1,0 +1,28 @@
+@import "~taro-ui/dist/style/components/article.scss";
+@import "~taro-ui/dist/style/components/input.scss";
+@import "~taro-ui/dist/style/components/icon.scss";
+@import "~taro-ui/dist/style/components/button.scss";
+@import "~taro-ui/dist/style/components/loading.scss";
+@import "~taro-ui/dist/style/components/flex.scss";
+
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid-item {
+    flex: 1;
+    // min-width: 20rpx;
+    width: 10rpx;
+    margin: 20rpx;
+    border-style: solid;
+    border-width: 1rpx;
+}
+
+.button-a {
+    background-color: #78a4f4;
+}
+
+.button-b{
+    background-color: #93b6f6;
+}
