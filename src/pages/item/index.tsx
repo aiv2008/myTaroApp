@@ -125,28 +125,38 @@ export default function Item () {
   const handleInputChange = () =>{
     console.log(`index: ${index}`);
     if(index >= 3){// 最后一题,跳到下一张图片
-      answ.map((v, i)=>{
-        if(v == result[i]){
-          Taro.atMessage({
-            'message': '回答正确',
-            'type': 'success',
-          })
-          if(pageIndex == ddd.length - 1){// 提示是最后一题了
-            Taro.atMessage({
-              'message': '已经是最后一题',
-              'type': 'warning',
-            })
-          }else{
-            init(pageIndex+1);
-          }
-        }else{
-          Taro.atMessage({
-            'message': '回答错误',
-            'type': 'error',
-          });
-          reset();
+      // answ.map((v, i)=>{
+      //   if(v != result[i]){
+      //   }
+      // });
+      let i=0;
+      for(;i<result.length;i++){
+        if(answ[i] != result[i]){
+            break;
         }
-      });
+      }
+
+      // if(v == result[i]){
+      if(i == result.length){
+        Taro.atMessage({
+          'message': '回答正确',
+          'type': 'success',
+        })
+        if(pageIndex == ddd.length - 1){// 提示是最后一题了
+          Taro.atMessage({
+            'message': '已经是最后一题',
+            'type': 'warning',
+          })
+        }else{
+          init(pageIndex+1);
+        }
+      }else{
+        Taro.atMessage({
+          'message': '回答错误',
+          'type': 'error',
+        });
+        reset();
+      }
     }
   }
   
