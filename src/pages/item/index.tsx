@@ -96,6 +96,14 @@ export default function Item () {
     // const [result, setResult] = useState(ddd[pageIndex].data);
   }
 
+  const reset = () => {
+    setAnsw([]);
+    setIndex(0);
+    for(let i=0;i<data.length;i++){
+      data[i].disabled = false;
+    }
+  }
+
   const handleClick = (internalIndex: number, e)=>{
     // console.log(`index: ${internalIndex},e=${JSON.stringify(e)}`);
     if( index < 4 ){
@@ -135,7 +143,8 @@ export default function Item () {
           Taro.atMessage({
             'message': '回答错误',
             'type': 'error',
-          })
+          });
+          reset();
         }
       });
     }
