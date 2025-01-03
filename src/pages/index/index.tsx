@@ -5,6 +5,7 @@ import {AtTabs, AtTabsPane,AtGrid,AtTabBar, AtForm, AtInput, AtButton,AtMessage,
 import { useState } from 'react'
 import Taro from '@tarojs/taro'
 import { aesEncrypt} from '../../utils/cryptogram'
+// import Item from '@/src/pages/item'
 import Item from '@/pages/item'
 
 export default function Index () {
